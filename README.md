@@ -1,4 +1,4 @@
-# tdd-rspec-rails
+# TDD with Rspec and Ruby on Rails
 This is a repo with an exemplo of the TDD approach with Ruby on Rails, RSpec and Capybara.
 
 ## Prerequisites
