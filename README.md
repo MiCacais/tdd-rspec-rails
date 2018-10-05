@@ -13,4 +13,3 @@ You have to first install Ruby 2+
 ## Running the web application
 
 ```rails s -b 0.0.0.0```
-
