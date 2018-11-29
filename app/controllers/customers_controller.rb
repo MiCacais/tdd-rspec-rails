@@ -1,9 +1,23 @@
 class CustomersController < ApplicationController
     def index
+        @customers = Customer.all
     end
 
     def new
         @customer = Customer.new
+    end
+
+    def edit
+        @customer = Customer.find(params[:id])
+    end
+
+    def update
+        @customer = Customer.find(params[:id])
+        if @customer.update(customer_params)
+            redirect_to customers_path(@customer.id), notice: 'Cliente atualizado com sucesso'
+        else
+            render :edit
+        end
     end
 
     def create
@@ -13,6 +27,18 @@ class CustomersController < ApplicationController
             redirect_to customers_path, notice: 'Cliente cadastrado com sucesso!'
         else
             render :new
+        end
+    end
+
+    def show
+        @customer = Customer.find(params[:id])
+    end
+
+    def destroy
+        if @customer.destroy
+            redirect_to customers_path, notice: 'Cliente excluído com sucesso!'
+        else
+            render :index
         end
     end
 

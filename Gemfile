@@ -28,6 +28,9 @@ gem 'capybara'
 gem 'faker'
 gem 'rails-i18n', '~> 5.0.0'
 gem 'spring-commands-rspec'
+gem 'selenium-webdriver'
+gem 'chromedriver-helper'
+gem 'factory_bot_rails', '~> 4.0'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
