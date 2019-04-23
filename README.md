@@ -2,9 +2,7 @@
 This is a repo with an exemplo of the TDD approach with Ruby on Rails, RSpec and Capybara.
 
 ## Prerequisites
-You have to first install Ruby 2+
-
-[...]
+You have to first install Ruby 2+ and have bundle installed in you machine.
 
 ## Running the tests
 
