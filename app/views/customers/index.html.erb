@@ -2,27 +2,30 @@
     <p><%= flash[:notice] %></p>
 <% end %>
 
-<h1>Listando clientes</h1>
+<div class="jumbotron">
+  <h1 class="display-4">Listando clientes</h1>
+  <p class="lead">Essa é a lista dos clientes cadastrados</p>
+</div>
 
-<table>
-  <thead>
-    <tr>
-      <td>Nome</td>
-      <td></td>
-      <td></td>
-      <td></td>
-    </tr>
-  </thead>
-  <tbody>
-    <% @customers.each do |customer| %>
-    <tr>
-      <td><%= customer.name %></td>
-      <td><%= link_to "Mostrar", customer_path(customer) %></td>
-      <td><%= link_to "Editar", edit_customer_path(customer) %></td>
-      <td><%= link_to "Excluir", customer, method: :delete, data: { confirm: 'Deseja realemente exluir?'} %></td>
-    </tr>
-    <% end %>
-  </tbody>
-</table>
+<div class="content">
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <td colspan="4">Cliente</td>
+      </tr>
+    </thead>
+    <tbody>
+      <% @customers.each do |customer| %>
+      <tr>
+        <td><%= customer.name %></td>
+        <td><%= link_to "Mostrar", customer_path(customer) %></td>
+        <td><%= link_to "Editar", edit_customer_path(customer) %></td>
+        <td><%= link_to "Excluir", customer, method: :delete, data: { confirm:
+          'Deseja realemente exluir?'} %></td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
 
-<%= link_to "Novo cliente", new_customer_path %>
+  <%= link_to "Novo cliente", new_customer_path, :class => "btn btn-primary btn-lg" %>
+</div>

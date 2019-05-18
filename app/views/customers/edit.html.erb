@@ -1,13 +1,17 @@
 <% if @customer.errors.any? %>
-    <ul>
-      <% @customer.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-    </ul>
-  <% end %>
-  
-  <h1>Editar cliente</h1>
-  
+  <ul class="alert alert-danger" role="alert">
+    <% @customer.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+    <% end %>
+  </ul>
+<% end %>
+
+<div class="jumbotron">
+  <h1 class="display-4">Editar cliente</h1>
+  <p class="lead">Edição de cadastro existente</p>
+</div>
+
+<div class="content">  
   <%= form_for @customer do |f| %>
     <%= f.label :name %>
     <%= f.text_field :name %> <br />
@@ -25,6 +29,7 @@
     <% { 'S': 'Sim', 'N': 'Não' }.each do |key, value| %>
       <%= f.radio_button :smoker, key %> <%= value %> <br />
     <% end %>
-  
-    <%= f.submit 'Atualizar cliente' %>
+    <br>
+    <%= f.submit 'Atualizar cliente', :class => "btn btn-primary btn-lg" %>
   <% end %>
+</div>

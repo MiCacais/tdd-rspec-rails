@@ -72,7 +72,7 @@ feature "Customers", type: :feature do
     customer = create(:customer)
 
     visit (customers_path)
-    find(:xpath, "/html/body/table/tbody/tr[1]/td[2]/a").click
+    find(:xpath, "/html/body/div/table/tbody/tr[1]/td[2]/a").click
 
     expect(page).to have_content('Mostrando cliente')
   end
@@ -81,7 +81,8 @@ feature "Customers", type: :feature do
     customer = create(:customer)
 
     visit (customers_path)
-    find(:xpath, "/html/body/table/tbody/tr[1]/td[3]/a").click
+    byebug
+    find(:xpath, "/html/body/div/table/tbody/tr[1]/td[3]/a").click
     1.second
     page.driver.browser.switch_to.alert.accept
 
