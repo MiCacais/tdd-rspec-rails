@@ -9,6 +9,6 @@ feature "Welcome", type: :feature do
 
     scenario 'Verificar o link cadastro de cliente' do
         visit(root_path)
-        expect(find('ul li')).to have_link('Cadastro de clientes')
+        expect(find('.btn')).to have_content('Cadastro de clientes')
     end
 end

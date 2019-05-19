@@ -68,7 +68,7 @@ feature "Customers", type: :feature do
     expect(page).to have_content(new_name)
   end
 
-  scenario 'Clica no link mostrar' do
+  scenario 'Clica no link mostrar', js: true do
     customer = create(:customer)
 
     visit (customers_path)
@@ -80,12 +80,11 @@ feature "Customers", type: :feature do
   scenario 'Apaga um cliente', js: true do
     customer = create(:customer)
 
-    visit (customers_path)
-    byebug
-    find(:xpath, "/html/body/div/table/tbody/tr[1]/td[3]/a").click
+    visit(customers_path)
+    find(:xpath, "/html/body/div/table/tbody/tr[1]/td[4]/a").click
     1.second
     page.driver.browser.switch_to.alert.accept
-
+    byebug
     expect(page).to have_content('Cliente excluído com sucesso!')
   end
 end
